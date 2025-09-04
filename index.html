@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Module 5 — Demo Site</title>
+
+  <!-- Google Fonts (Fonts topic) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Internal CSS example (Linking topic) -->
+  <style>
+    /* Internal CSS just to demonstrate. We'll mainly use external in styles.css. */
+    .internal-note { color: #555; font-size: 0.9rem; }
+  </style>
+
+  <!-- External CSS (best practice) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Inline CSS example (Linking topic) -->
+  <div style="display:none">This uses inline CSS to hide this message.</div>
+
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <h1 class="logo">CSS<span class="accent">Play</span></h1>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-content container ">
+      <p class="eyebrow highlight ">What is CSS & Why?</p>
+      <h2>Separate <span class="accent">style</span> from structure</h2>
+      <p class="lead">
+        CSS makes HTML look good—colors, sizes, layouts, animations, and responsive design.
+      </p>
+      <a class="btn primary" href="#features">Explore Features</a>
+      <span class="badge" aria-label="New">NEW</span>
+    </div>
+  </section>
+
+  <section id="features" class="features container">
+    <h3>Box Model, Display & Flexbox</h3>
+    <p class="internal-note">This line is styled using internal CSS in &lt;head&gt;.</p>
+
+    <div class="cards">
+      <article class="card" id="special">
+        <h4>Box Model</h4>
+        <p>Margin, border, padding, and content define spacing and size.</p>
+        <button class="btn">Hover Me</button>
+      </article>
+      <article class="card">
+        <h4>Display</h4>
+        <p><code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>none</code></p>
+        <span class="inline-pill">inline</span>
+        <span class="inline-pill">inline-block</span>
+      </article>
+      <article class="card">
+        <h4>Flexbox</h4>
+        <p>Align, distribute, and wrap items easily in 1D layouts.</p>
+        <div class="flex-demo">
+          <div class="flex-item">A</div>
+          <div class="flex-item">B</div>
+          <div class="flex-item">C</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h3>CSS Grid, Backgrounds & Units</h3>
+      <div class="grid">
+        <div class="tile tall">1</div>
+        <div class="tile">2</div>
+        <div class="tile wide">3</div>
+        <div class="tile">4</div>
+        <div class="tile">5</div>
+        <div class="tile">6</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact container">
+    <h3>Text & Fonts</h3>
+    <p class="lede">
+      Web-safe fonts, Google Fonts, sizes (<code>rem</code>), weights, spacing, and alignment.
+    </p>
+    <form class="contact-form">
+      <label>
+        Your name
+        <input type="text" placeholder="Jane Doe" />
+      </label>
+      <label>
+        Your email
+        <input type="email" placeholder="jane@example.com" />
+      </label>
+      <label>
+        Message
+        <textarea rows="4" placeholder="Hello!"></textarea>
+      </label>
+      <button class="btn primary">Send</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with <span class="heart">♥</span> CSS — <span class="year"></span></p>
+    </div>
+  </footer>
+
+  <a href="#hero" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <script>
+    // Tiny enhancement: set current year
+    document.querySelector('.year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
