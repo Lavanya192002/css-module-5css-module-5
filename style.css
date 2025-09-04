@@ -300,3 +300,169 @@ em { font-style: italic; }   /* style */
     border: solid red 3px;
 }
 
+/* styles.css - Combined exercises and examples */
+
+/* CSS Variables */
+:root {
+  --main-color: #3498db;
+  --secondary-color: #2ecc71;
+  --font-stack: 'Segoe UI', Tahoma, sans-serif;
+  --spacing-y: 20px;
+}
+
+/* Basic selectors */
+.highlight {
+  background-color: yellow;
+}
+
+#special {
+  color: red;
+  font-weight: bold;
+}
+
+[title] {
+  text-decoration: underline;
+}
+
+/* Colors */
+body {
+  background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
+  color: #333;
+  font-family: var(--font-stack);
+}
+
+.alt-colors {
+  color: rgb(100, 50, 200);
+  background: hsl(200, 80%, 70%);
+}
+
+/* Text styling */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+/* Backgrounds */
+.bg-image {
+  background-image: url('https://picsum.photos/600/400');
+  background-repeat: repeat-x;
+  background-size: cover;
+  height: 300px;
+}
+
+/* Box model */
+.box-demo {
+  margin: 20px;
+  padding: 15px;
+  border: 2px dashed #555;
+}
+
+/* Units */
+.unit-demo {
+  width: 50%;
+  font-size: 1.2em;
+  height: 20vh;
+}
+
+/* Display */
+.hidden {
+  display: none;
+}
+
+.note {
+  display: inline-block;
+  padding: 10px;
+  background: lightyellow;
+}
+
+/* Positioning */
+.position-demo {
+  position: relative;
+}
+
+.position-demo span {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Flexbox */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+}
+
+.grid-header {
+  grid-area: header;
+}
+.grid-sidebar {
+  grid-area: sidebar;
+}
+.grid-main {
+  grid-area: main;
+}
+.grid-footer {
+  grid-area: footer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+  }
+}
+
+/* Transitions & animations */
+button {
+  background: var(--main-color);
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.float-box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  animation: float 3s infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
+}
